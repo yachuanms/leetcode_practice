@@ -1,34 +1,36 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int min(int a, int b){
-    return (a<b)?a:b;
-}
+//two pointer
 
-// 你要自己實作這個函式
 int trap(int* height, int heightSize){
-    int *leftMax = malloc(sizeof(int)*heightSize);
-    int *rightMax = malloc(sizeof(int)*heightSize);
-    leftMax[0] = 0;
-    rightMax[0] = 0;
-    for(int i = 0; i < heightSize; i++){
-        if(height[i] > leftMax[i-1]){
-            leftMax[i] = height[i];
-        }
-        if(height[heightSize-i]>rightMax[i-1]){
-            rightMax[i] = height[heightSize-i];
-        }
-    }
-    int area = 0;
+    if(heightSize < 3) return 0;
+    int leftMax = height[0];
+    int rightMax = height[heightSize-1];
+    int l = 0;
+    int r = heightSize-1;
     int sum = 0;
-    for(int i = 0; i < heightSize; i++){
-        area +=min(leftMax[i], rightMax[heightSize-i])-height[i];
-        if(area > 0){
-            sum += area;
+    while(l < r){
+        if(height[l] < height[r]){
+            if(height[l] > leftMax){
+                leftMax = height[l];
+            }else{
+                sum += leftMax - height[l];
+            }
+            l++;
+        }else{
+            if(height[r] > rightMax){
+                rightMax = height[r];
+            }else{
+                sum += rightMax - height[r];
+            }
+            r--;
         }
     }
+
     return sum;
 }
+
 
 int main() {
     int h1[] = {0,1,0,2,1,0,1,3,2,1,2,1};
