@@ -18,8 +18,8 @@ static void ensureCapacity(MinStack* obj){
     }
 
     int newCapa = obj->capacity *2;
-    int* newData = malloc(sizeof(int)*newCapa);
-    int* newMin = malloc(sizeof(int)*newCapa);
+    int* newData = realloc(obj-> data, sizeof(int)*newCapa);
+    int* newMin = realloc(obj->minData, sizeof(int)*newCapa);
 
     obj->data = newData;
     obj->minData = newMin;
@@ -53,23 +53,20 @@ void minStackPush(MinStack* obj, int val){
 }
 
 void minStackPop(MinStack* obj){
-    if (obj->top < 0) return;
+    //if (obj->top < 0) return;
     obj->top--;
     obj->minTop--;
 }
 
 int minStackTop(MinStack* obj){
-    if (obj->top < 0) return 0;
+    //if (obj->top < 0) return 0;
     return obj->data[obj->top];
 }
 int minStackGetMin(MinStack* obj){
-    if (obj->top < 0) return 0;
+    //if (obj->top < 0) return 0;
     return obj->minData[obj->minTop];
 }
 void minStackFree(MinStack* obj){
-    if(!obj){
-        return;
-    }
     free(obj->data);
     free(obj->minData);
     free(obj);
