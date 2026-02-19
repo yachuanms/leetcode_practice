@@ -1,6 +1,7 @@
 def search(self, nums, target):
 
     left = 0
+    #記得減一 一直忘記
     right = len(nums)-1
     
     while left <= right:

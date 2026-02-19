@@ -19,9 +19,6 @@ int searchInsert(int* nums, int numsSize, int target) {
             return mid;
         }
     }
-    if(left > right){
-        return left;
-    }
     return right;
 }
 
