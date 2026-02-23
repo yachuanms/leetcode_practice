@@ -10,20 +10,18 @@ class Solution:
         # TODO: 你寫
         dummy = ListNode(0)
         cur = dummy
-
         carry = 0
+
         while l1 or l2 or carry:
-            if l1: n1 = l1.val
-            else: n1 =0
-            if l2: n2 = l2.val
-            else: n2 = 0
-            sum = n1+n2+carry
+            n1 = l1.val if l1 else 0
+            n2 = l2.val if l2 else 0
+            sum = n1 + n2 + carry
+
             cur.next = ListNode(sum%10)
             carry = sum // 10
-            l1 = l1.next if l1 else 0
-            l2 = l2.next if l2 else 0
+            l1 = l1.next if l1 else None 
+            l2 = l2.next if l2 else None
             cur = cur.next
-
         return dummy.next
         
 
