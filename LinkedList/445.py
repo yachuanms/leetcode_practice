@@ -1,8 +1,9 @@
 # Definition for singly-linked list.
-# class ListNode(object):
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
+class ListNode(object):
+    def __init__(self, val=0, next=None):
+       self.val = val
+       self.next = next
+
 class Solution(object):
     def addTwoNumbers(self, l1, l2):
         """
@@ -26,6 +27,7 @@ class Solution(object):
             n1 = s1.pop() if s1 else 0
             n2 = s2.pop() if s2 else 0
             sum = n1+n2+carry
+            #頭插法
             cur = ListNode(sum%10)
             head.next = cur
             cur = head
