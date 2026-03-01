@@ -19,6 +19,8 @@ class Solution:
         self.invertTree(root.right)
         self.invertTree(root.left)
         return root
+#訪問每一個 node 一次
+#O(n)
 
 
 # -------------------------
