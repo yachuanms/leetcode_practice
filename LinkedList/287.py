@@ -3,6 +3,7 @@ from typing import List
 class Solution:
     def findDuplicate(self, nums: List[int]) -> int:
         # TODO: 你寫
+        #最簡單但沒有練習到演算法
         s = set()
 
         for n in nums:

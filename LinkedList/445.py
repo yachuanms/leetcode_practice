@@ -11,6 +11,7 @@ class Solution(object):
         :type l2: Optional[ListNode]
         :rtype: Optional[ListNode]
         """
+        #先放到stack裡面
         s1 = []
         s2 = []
         cur1 = l1
