@@ -5,7 +5,7 @@ class Solution:
         n = len(nums)
         prefix = 0
         count = 0
-        #正確初始化
+        #正確初始化!!!!!!
         hashMap[0] = 1
         for i in range (n):
             prefix += nums[i]
