@@ -13,10 +13,12 @@ class Solution(object):
             if total == target:
                 res.append(path[:])
                 return
+            #在「全部都是正數」
             if total > target:
                 return
             for i in range(start, len(candidates)):
                 path.append(candidates[i])
+                #因為數字可以重複用 所以用i
                 backtrack(i, path, total+candidates[i])
                 path.pop()
 
