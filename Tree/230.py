@@ -23,6 +23,9 @@ class Solution(object):
 
             if not node:
                 return
+            #找到就停 early stop!!
+            if self.ans is not None:
+                return
             #左
             dfs(node.left)
             #中
