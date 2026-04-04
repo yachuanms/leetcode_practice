@@ -14,6 +14,8 @@ class Solution(object):
         :type root: TreeNode
         :rtype: List[int]
         """
+
+        '''dfs
         ans = []
 
         def dfs(node, depth):
@@ -29,7 +31,24 @@ class Solution(object):
 
         dfs(root, 0)
         return ans            
-        
+        '''
+        #bfs
+        if not root:
+            return []
+        ans = []
+        queue = deque([root])
+
+        while queue:
+            level_size = len(queue)
+            for i in range(level_size):
+                node = queue.popleft()
+                rightmost = node
+                if node.left:
+                    queue.append(node.left)
+                if node.right:
+                    queue.append(node.right)
+            ans.append(rightmost.val)
+        return ans
 
 
 def build_tree(values):
