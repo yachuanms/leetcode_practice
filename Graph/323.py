@@ -1,6 +1,6 @@
 from typing import List
 
-#323
+#323 premium
 #有多少個未相連的components?
 
 class Solution:
