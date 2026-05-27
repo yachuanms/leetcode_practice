@@ -1,7 +1,7 @@
 from typing import List
 import heapq
 
-
+#Prim
 class Solution:
     #Minimum spanning tree
     def minCostConnectPoints(self, points: List[List[int]]) -> int:

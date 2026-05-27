@@ -1,7 +1,7 @@
 from typing import List
 import heapq
 
-
+#Dijkstra
 class Solution:
     def networkDelayTime(
         self,
