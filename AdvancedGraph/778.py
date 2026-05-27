@@ -35,7 +35,7 @@ class Solution:
             for dr, dc in [(0, 1), (0, -1), (1, 0), (-1, 0)]:
                 nr = dr+r
                 nc = dc+c
-                if 0 <= nr <= n and 0 <= nc <= n and (nr,nc) not in visited:
+                if 0 <= nr < n and 0 <= nc < n and (nr,nc) not in visited:
                     heapq.heappush(minHeap, (grid[nr][nc], nr, nc))
 
 
