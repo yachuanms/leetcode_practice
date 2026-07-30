@@ -9,8 +9,6 @@ class Solution:
         current_sum = nums[0]
         max_sum = nums[0]
 
-        # TODO:
-        # 從第二個元素開始掃描
         for i in range(1, len(nums)):
             # TODO:
             # 更新 current_sum
@@ -18,12 +16,8 @@ class Solution:
             # 是延續前面的 subarray？
             # 還是從 nums[i] 重新開始？
 
-            # TODO:
-            # 更新 max_sum
             max_sum = max(max_sum, current_sum)
 
-        # TODO:
-        # 回傳答案
         return max_sum
 
 
