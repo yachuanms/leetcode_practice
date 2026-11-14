@@ -1,3 +1,5 @@
+#Number of Good Pairs
+
 class Solution:
     def numIdenticalPairs(self, nums: list[int]) -> int:
         #use a hashMap to record all the num's index
