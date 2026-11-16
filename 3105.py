@@ -1,5 +1,8 @@
 #3105. Longest Strictly Increasing or Strictly Decreasing Subarray
 
+from typing import List
+
+
 class Solution:
     def longestMonotonicSubarray(self, nums: List[int]) -> int:
         n = len(nums)
